@@ -1,2 +1,2 @@
 # bootstrap-webpack
-Startup project | Bootstrap + Webpack
+🚀 Startup project | Bootstrap + Sass + Webpack
