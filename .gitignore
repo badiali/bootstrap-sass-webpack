@@ -1,9 +1,6 @@
+### OSX ###
 .DS_Store
 
+### Project ###
 node_modules
-package-lock.json
-yarn.lock
-
-*.vscode
-
 dist/*
