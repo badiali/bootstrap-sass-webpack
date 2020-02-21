@@ -6,7 +6,7 @@
 ```
 npm install
 ```
-then, you can execute three commands:
+### Then, you can execute three commands:
 
 webpack-dev-server --mode development --open
 ```
