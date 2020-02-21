@@ -4,7 +4,7 @@
 
 ### Installing
 ```
-npm run start
+npm install
 ```
 or
 ```
