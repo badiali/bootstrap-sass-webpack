@@ -1,7 +1,6 @@
 # Bootstrap + Sass + Webpack
 🚀 Startup project | Bootstrap + Sass + Webpack
-
-## 👌 Use it as template to init your next project
+👌 Use it as template to init your next project
 
 ### Installing
 ```
