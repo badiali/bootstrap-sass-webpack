@@ -6,7 +6,19 @@
 ```
 npm install
 ```
-then
+then, you can execute three commands:\
+  
+webpack-dev-server --mode development --open
 ```
 npm run start
+```
+  
+webpack --mode development
+```
+npm run dev
+```
+  
+webpack --mode production
+```
+npm run build
 ```
