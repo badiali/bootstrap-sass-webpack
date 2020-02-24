@@ -8,15 +8,15 @@ npm install
 ### Una vez instalado
 Se pueden ejecutar tres comandos:
 
-webpack-dev-server --mode development --open
+*webpack-dev-server --mode development --open*
 ```
 npm run start
 ```
-webpack --mode development
+*webpack --mode development*
 ```
 npm run dev
 ```
-webpack --mode production
+*webpack --mode production*
 ```
 npm run build
 ```
