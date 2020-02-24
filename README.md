@@ -1,12 +1,12 @@
 # Bootstrap + Sass + Webpack
-🚀 Startup project | Bootstrap + Sass + Webpack\
-👌 Use it as template to init your next project
+🚀 Plantilla base para comenzar un nuevo proyecto basado en | Bootstrap + Sass + Webpack\
 
-### Installing
+### Instalación
 ```
 npm install
 ```
-### Then, you can execute three commands:
+### Una vez instalado
+Se pueden ejecutar tres comandos:
 
 webpack-dev-server --mode development --open
 ```
