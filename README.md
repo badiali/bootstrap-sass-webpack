@@ -1,3 +1,5 @@
+![Captura de pantalla Bootstrap + Sass + Webpack](/src/img/screenshot.png?raw=true "Captura de pantalla Bootstrap + Sass + Webpack")
+
 # Bootstrap + Sass + Webpack
 🚀 Plantilla base para comenzar un nuevo proyecto basado en | Bootstrap + Sass + Webpack
 
