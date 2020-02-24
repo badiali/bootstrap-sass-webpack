@@ -1,5 +1,5 @@
 # Bootstrap + Sass + Webpack
-🚀 Plantilla base para comenzar un nuevo proyecto basado en | Bootstrap + Sass + Webpack\
+🚀 Plantilla base para comenzar un nuevo proyecto basado en | Bootstrap + Sass + Webpack
 
 ### Instalación
 ```
