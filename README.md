@@ -13,6 +13,6 @@
 
 Se pueden ejecutar tres comandos:
 
-- Arranca un servidor y abre una pestaña en el navegador *webpack-dev-server --mode development --open* `npm start`
-- Se generan los ficheros en la carpeta `./dist` sin minificar *webpack --mode development* `npm run dev`
-- Se generan los ficheros en la carpeta `./dist` minificados y listos para subir a producción *webpack --mode production* `npm run build`
+- `npm start` Arranca un servidor y abre una pestaña en el navegador.
+- `npm run dev` Se generan los ficheros en la carpeta `./dist` sin minificar.
+- `npm run build` Se generan los ficheros en la carpeta `./dist` minificados y listos para subir a producción.
