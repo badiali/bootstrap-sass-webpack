@@ -3,22 +3,16 @@
 # Bootstrap + Sass + Webpack
 🚀 Plantilla base para comenzar un nuevo proyecto basado en | Bootstrap + Sass + Webpack
 
-### Instalación
-```
-npm install
-```
-### Una vez instalado
+## Instalación
+
+- Clonar el repositorio: `git clone https://github.com/badiali/bootstrap-sass-webpack.git`
+- Instalar con [npm](https://www.npmjs.com/): `npm install`
+- Instalar con [yarn](https://yarnpkg.com/): `yarn`
+
+## Una vez instalado
+
 Se pueden ejecutar tres comandos:
 
-*webpack-dev-server --mode development --open*
-```
-npm run start
-```
-*webpack --mode development*
-```
-npm run dev
-```
-*webpack --mode production*
-```
-npm run build
-```
+- Arranca un servidor y abre una pestaña en el navegador *webpack-dev-server --mode development --open* `npm start`
+- Se generan los ficheros en la carpeta `./dist` sin minificar *webpack --mode development* `npm run dev`
+- Se generan los ficheros en la carpeta `./dist` minificados y listos para subir a producción *webpack --mode production* `npm run build`
