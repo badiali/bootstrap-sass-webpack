@@ -1,11 +1,11 @@
 {
   "name": "bootstrap-webpack",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Startup project | Bootstrap + Sass + Webpack",
   "author": {
-    "name": "Luis Alberto Badiali",
-    "email": "info@badiali.net",
-    "url": "https://badiali.net"
+    "name": "Luis Badiali",
+    "email": "info@badiali.es",
+    "url": "https://badiali.es"
   },
   "keywords": [
     "bootstrap",
