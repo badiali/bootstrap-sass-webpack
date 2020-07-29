@@ -5,7 +5,7 @@
 
 ## NUEVA versión
 
-- Múltiples 'entry points' para crear 'MPA' (Aplicaciones Multi Páginas)
+- Múltiples 'entry points' para crear 'MPA' (Aplicaciones Multipáginas)
 - Al compilar limpia el css de estilos no usados.
 - Disponibles los iconos de **FontAwesome**.
 - Fuente cargada de **Google Fonts**
