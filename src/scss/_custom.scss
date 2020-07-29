@@ -1,5 +1,30 @@
 /*
- * En este archivo van las variables que sobrescriben las de Bootstrap por defecto.
- * Estas variables las puedes ver en esta ruta:
- * node_modules/bootstrap/scss/_variables.scss
+ * En este archivo van las variables para configurar:
+ * 1. Bootstrap
+ * 2. Font Awesome
  */
+
+ // 1. Bootstrap
+ $grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+); 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+$enable-gradients: true;
+$enable-responsive-font-sizes: true;
+$primary: rgb(32,50,72);
+$secondary: rgb(135,211,158);
+
+// 2. Font Awesome
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+$fa-font-display: swap!important;
