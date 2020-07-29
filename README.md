@@ -3,9 +3,10 @@
 # Bootstrap + Sass + Webpack
 🚀 Plantilla para iniciar proyectos basados en estas herramientas | Bootstrap + Sass + Webpack (SPA, MPA)
 
-- Disponibles los iconos de **FontAwesome**.
-- Al compilar limpia el css de estilos no usados.
 - Múltiples 'entry points' para crear 'MPA' (Aplicaciones Multi Páginas)
+- Al compilar limpia el css de estilos no usados.
+- Disponibles los iconos de **FontAwesome**.
+- Fuente cargada de **Google Fonts**
 
 ## Instalación
 
