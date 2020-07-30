@@ -5,7 +5,7 @@
 
 ## NUEVA versión
 
-Puedes ver esta versión 'live' en Vercel aquí:
+Puedes ver esta versión 'live' en **Vercel** aquí:
 [bootstrap-sass-webpack.vercel.app](https://bootstrap-sass-webpack.vercel.app/)
 
 - Múltiples 'entry points' para crear 'MPA' (Aplicaciones Multipáginas)
