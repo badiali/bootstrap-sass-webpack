@@ -8,9 +8,7 @@
 Puedes ver esta versión 'live' en **Vercel** aquí:
 [bootstrap-sass-webpack.vercel.app](https://bootstrap-sass-webpack.vercel.app/)
 
-- Múltiples 'entry points' para crear 'MPA' (Aplicaciones Multipáginas)
-- Al compilar limpia el css de estilos no usados.
-- Disponibles los iconos de **FontAwesome**.
+- Plantillas con Handlebars
 - Fuente cargada de **Google Fonts**
 
 ![bootstrap-webpack-badiali](https://user-images.githubusercontent.com/8589135/88863847-1ad39f00-d204-11ea-97d0-a452b226672a.gif)
@@ -32,30 +30,29 @@ Se pueden ejecutar tres comandos:
 
 ```
 "dependencies": {
-  "@fortawesome/fontawesome-free": "^5.14.0",
-  "bootstrap": "^4.5.0",
-  "jquery": "^3.5.1",
-  "popper.js": "^1.16.1"
+  "bootstrap": "^5.2.0-beta1"
 },
 "devDependencies": {
-  "@babel/core": "^7.10.5",
-  "@babel/preset-env": "^7.10.4",
-  "@fullhuman/postcss-purgecss": "^2.3.0",
-  "autoprefixer": "^9.8.5",
-  "babel-loader": "^8.1.0",
-  "clean-webpack-plugin": "^3.0.0",
-  "css-loader": "^3.6.0",
-  "file-loader": "^6.0.0",
-  "html-webpack-plugin": "^4.3.0",
-  "mini-css-extract-plugin": "^0.9.0",
-  "node-sass": "^4.14.1",
-  "optimize-css-assets-webpack-plugin": "^5.0.3",
-  "postcss-loader": "^3.0.0",
-  "sass-loader": "^8.0.2",
-  "terser-webpack-plugin": "^3.0.8",
-  "webpack": "^4.41.6",
-  "webpack-cli": "^3.3.11",
-  "webpack-dev-server": "^3.10.3"
+  "autoprefixer": "^10.4.7",
+  "css-loader": "^6.7.1",
+  "file-loader": "^6.2.0",
+  "handlebars": "^4.7.7",
+  "handlebars-loader": "^1.7.2",
+  "html-webpack-plugin": "^5.5.0",
+  "image-minimizer-webpack-plugin": "^3.2.3",
+  "imagemin": "^8.0.1",
+  "imagemin-mozjpeg": "^10.0.0",
+  "mini-css-extract-plugin": "^2.6.1",
+  "node-sass": "^7.0.1",
+  "postcss": "^8.4.14",
+  "postcss-loader": "^7.0.0",
+  "purgecss-webpack-plugin": "^4.1.3",
+  "rimraf": "^3.0.2",
+  "sass-loader": "^13.0.0",
+  "terser-webpack-plugin": "^5.3.3",
+  "webpack": "^5.73.0",
+  "webpack-cli": "^4.10.0",
+  "webpack-dev-server": "^4.9.2"
 }
 ```
 
