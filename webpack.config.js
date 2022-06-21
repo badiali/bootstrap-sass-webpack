@@ -1,134 +1,114 @@
-const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const path = require('path');
+const glob = require('glob');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+const PATHS = {
+  src: path.join(__dirname, 'src')
+}
 
 module.exports = {
-  entry: {
-    app: './src/app.js',
-    index: './src/pages/index/index.js',
-    contact: './src/pages/contact/contact.js'
-  },
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    filename: 'assets/js/[name].[hash:8].js'
-  },
-  devServer: {
-    contentBase: './dist'
+    filename: 'src/js/bundle.js',
+    path: path.join(__dirname, 'dist')
   },
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          name: 'commons',
-          chunks: 'initial',
-          minChunks: 2
-        }
-      }
-    },
+    minimize: true,
     minimizer: [
-      new TerserJSPlugin({
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['mozjpeg', {
+                progressive: true,
+                quality: 60,
+              }],
+            ],
+          },
+        },
+      }),
+      new TerserPlugin({
         terserOptions: {
-          output: {
+          format: {
             comments: false,
           },
         },
         extractComments: false,
       }),
-      new OptimizeCSSAssetsPlugin()]
+    ],
+  },
+  devServer: {
+    open: true
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: { loader: 'babel-loader' }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          }, {
-            loader: 'css-loader'
-          }, {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: './postcss.config.js'
-              }
-            }
-          }
-        ]
+        test: /\.hbs$/,
+        loader: 'handlebars-loader',
       },
       {
         test: /\.(scss)$/,
-        use: [{
-          loader: MiniCssExtractPlugin.loader,
-        }, {
-          loader: 'css-loader'
-        }, {
-          loader: 'postcss-loader',
-          options: {
-            config: {
-              path: './postcss.config.js'
-            }
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: function () {
+                  return [
+                    require('autoprefixer')
+                  ];
+                },
+              },
+            },
+          },
+          {
+            loader: 'sass-loader'
           }
-        }, {
-          loader: 'sass-loader'
-        }]
+        ]
       },
       {
-        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(jpg|png)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/fonts/'
-            }
-          }
-        ]
+              outputPath: 'src/images/',
+              useRelativePath: true,
+            },
+          },
+        ],
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'assets/images/'
-            }
-          }
-        ]
-      }
-    ]
+    ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      favicon: './src/favicon.ico',
-      minify: {
-        collapseWhitespace: true
-      },
+      title: 'Bootstrap + Sass + Webpack - Inicio',
+      bodyClass: 'inicio d-flex justify-content-center w-100 h-100 bg-primary bg-gradient',
       filename: 'index.html',
-      template: './src/pages/index/index.html',
-      chunks: ['app','index']
+      template: 'src/views/index.hbs',
+      minify: true
     }),
     new HtmlWebpackPlugin({
-      favicon: './src/favicon.ico',
-      minify: {
-        collapseWhitespace: true
-      },
+      title: 'Bootstrap + Sass + Webpack - Contacto',
+      bodyClass: 'contacto d-flex justify-content-center w-100 h-100 bg-secondary bg-gradient',
       filename: 'contacto.html',
-      template: './src/pages/contact/contact.html',
-      chunks: ['app','contact']
+      template: 'src/views/contacto.hbs',
+      minify: true
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].[hash:8].css'
-    })
-  ]
-}
+      filename: 'src/css/[name].css'
+    }),
+  ],
+};
