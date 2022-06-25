@@ -1,15 +1,17 @@
 ![Imagen de cabecera Bootstrap + Sass + Webpack](https://repository-images.githubusercontent.com/241963852/02a9dc00-5955-11ea-9e47-506b9d2fa5bf "Imagen de cabecera Bootstrap + Sass + Webpack")
 
 # Bootstrap + Sass + Webpack
-🚀 Plantilla para iniciar proyectos basados en estas herramientas | Bootstrap + Sass + Webpack (SPA, MPA)
+🚀 Plantilla para iniciar proyectos basados en estas herramientas | Bootstrap + Sass + Webpack
 
 ## NUEVA versión
 
 Puedes ver esta versión 'live' en **Vercel** aquí:
 [bootstrap-sass-webpack.vercel.app](https://bootstrap-sass-webpack.vercel.app/)
 
-- Plantillas con Handlebars
-- Fuente cargada de **Google Fonts**
+- Bootstrap
+- Sass
+- Handlebars
+- Webpack
 
 ![bootstrap-webpack-badiali](https://user-images.githubusercontent.com/8589135/88863847-1ad39f00-d204-11ea-97d0-a452b226672a.gif)
 
@@ -35,7 +37,6 @@ Se pueden ejecutar tres comandos:
 "devDependencies": {
   "autoprefixer": "^10.4.7",
   "css-loader": "^6.7.1",
-  "file-loader": "^6.2.0",
   "handlebars": "^4.7.7",
   "handlebars-loader": "^1.7.2",
   "html-webpack-plugin": "^5.5.0",
