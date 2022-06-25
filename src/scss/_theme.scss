@@ -28,8 +28,17 @@
   }
 }
 
+.card {
+  width: 370px;
+  min-height: 410px;
+}
+
 h1 {
   @include font-size(5rem);
   line-height: .9;
   letter-spacing: -2px;
+}
+
+.btn {
+  letter-spacing: .1em;
 }

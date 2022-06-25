@@ -10,8 +10,16 @@ $enable-gradients: true;
 $primary: rgb(32,50,72);
 $secondary: rgb(135,211,158);
 
+/* Fuente */
+$font-family-base: 'Inter', sans-serif;
+$font-weight-base: 300;
+$headings-font-weight: 300;
+
 /* Links */
 $link-decoration: none;
 
-/* Fuente */
-$font-family-base: 'Inter', sans-serif;
+/* Botones */
+$btn-padding-y: 0.8rem;
+$btn-padding-x: 1.75rem;
+$btn-font-size: 0.875rem;
+$btn-font-weight: 500;
