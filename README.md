@@ -13,8 +13,6 @@ Puedes ver esta versión 'live' en **Vercel** aquí:
 - Handlebars
 - Webpack
 
-![bootstrap-webpack-badiali](https://user-images.githubusercontent.com/8589135/88863847-1ad39f00-d204-11ea-97d0-a452b226672a.gif)
-
 ## Instalación
 
 1. Clonar el repositorio: `git clone https://github.com/badiali/bootstrap-sass-webpack.git`
