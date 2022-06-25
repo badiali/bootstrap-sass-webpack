@@ -47,7 +47,6 @@ Se pueden ejecutar tres comandos:
   "node-sass": "^7.0.1",
   "postcss": "^8.4.14",
   "postcss-loader": "^7.0.0",
-  "purgecss-webpack-plugin": "^4.1.3",
   "rimraf": "^3.0.2",
   "sass-loader": "^13.0.0",
   "terser-webpack-plugin": "^5.3.3",
