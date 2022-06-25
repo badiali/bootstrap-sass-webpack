@@ -2,6 +2,7 @@ const path = require('path');
 const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -90,18 +91,19 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Bootstrap + Sass + Webpack - Inicio',
-      bodyClass: 'inicio d-flex justify-content-center w-100 h-100 bg-primary bg-gradient',
       filename: 'index.html',
       template: 'src/views/index.hbs'
     }),
     new HtmlWebpackPlugin({
       title: 'Bootstrap + Sass + Webpack - Contacto',
-      bodyClass: 'contacto d-flex justify-content-center w-100 h-100 bg-secondary bg-gradient',
       filename: 'contacto.html',
       template: 'src/views/contacto.hbs'
     }),
     new MiniCssExtractPlugin({
       filename: 'src/css/[name].css'
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*.hbs`,  { nodir: true }),
     }),
   ],
 };
