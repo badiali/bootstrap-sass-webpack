@@ -16,40 +16,16 @@ module.exports = {
     filename: 'src/js/bundle.js',
     path: path.join(__dirname, 'dist')
   },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            plugins: [
-              ['mozjpeg', {
-                progressive: true,
-                quality: 60,
-              }],
-            ],
-          },
-        },
-      }),
-      new TerserPlugin({
-        terserOptions: {
-          format: {
-            comments: false,
-          },
-        },
-        extractComments: false,
-      }),
-    ],
-  },
   devServer: {
-    open: true
+    watchFiles: ['src/**/*.hbs'],
+    open: true,
+    hot: true
   },
   module: {
     rules: [
       {
         test: /\.hbs$/,
-        loader: 'handlebars-loader',
+        loader: 'handlebars-loader'
       },
       {
         test: /\.(scss)$/,
@@ -78,18 +54,38 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'src/images/',
-              useRelativePath: true,
-            },
-          },
-        ],
+        test: /\.(jpg|png|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'src/images/[name][ext]'
+        },
       },
+    ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['mozjpeg', {
+                progressive: true,
+                quality: 60
+              }],
+            ],
+          },
+        },
+      }),
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false
+          },
+        },
+        extractComments: false
+      }),
     ],
   },
   plugins: [
@@ -97,18 +93,19 @@ module.exports = {
       title: 'Bootstrap + Sass + Webpack - Inicio',
       bodyClass: 'inicio d-flex justify-content-center w-100 h-100 bg-primary bg-gradient',
       filename: 'index.html',
-      template: 'src/views/index.hbs',
-      minify: true
+      template: 'src/views/index.hbs'
     }),
     new HtmlWebpackPlugin({
       title: 'Bootstrap + Sass + Webpack - Contacto',
       bodyClass: 'contacto d-flex justify-content-center w-100 h-100 bg-secondary bg-gradient',
       filename: 'contacto.html',
-      template: 'src/views/contacto.hbs',
-      minify: true
+      template: 'src/views/contacto.hbs'
     }),
     new MiniCssExtractPlugin({
       filename: 'src/css/[name].css'
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*.hbs`,  { nodir: true }),
     }),
   ],
 };
