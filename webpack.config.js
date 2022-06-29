@@ -7,34 +7,34 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const PATHS = {
-  src: path.join(__dirname, 'src')
+  src: path.resolve(__dirname, 'src')
 }
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'src/js/bundle.js',
-    path: path.join(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   devServer: {
     watchFiles: ['src/**/*.hbs'],
-    open: true,
-    hot: true
+    hot: true,
   },
   module: {
     rules: [
       {
         test: /\.hbs$/,
-        loader: 'handlebars-loader'
+        loader: 'handlebars-loader',
       },
       {
         test: /\.(scss)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
           },
           {
             loader: 'postcss-loader',
@@ -42,14 +42,14 @@ module.exports = {
               postcssOptions: {
                 plugins: function () {
                   return [
-                    require('autoprefixer')
+                    require('autoprefixer'),
                   ];
                 },
               },
             },
           },
           {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
           }
         ]
       },
@@ -57,7 +57,7 @@ module.exports = {
         test: /\.(jpg|png|svg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'src/images/[name][ext]'
+          filename: 'src/images/[name][ext]',
         },
       },
     ],
@@ -72,7 +72,7 @@ module.exports = {
             plugins: [
               ['mozjpeg', {
                 progressive: true,
-                quality: 60
+                quality: 60,
               }],
             ],
           },
@@ -81,10 +81,10 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           format: {
-            comments: false
+            comments: false,
           },
         },
-        extractComments: false
+        extractComments: false,
       }),
     ],
   },
@@ -92,15 +92,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Bootstrap + Sass + Webpack - Inicio',
       filename: 'index.html',
-      template: 'src/views/index.hbs'
+      template: 'src/views/index.hbs',
     }),
     new HtmlWebpackPlugin({
       title: 'Bootstrap + Sass + Webpack - Contacto',
       filename: 'contacto.html',
-      template: 'src/views/contacto.hbs'
+      template: 'src/views/contacto.hbs',
     }),
     new MiniCssExtractPlugin({
-      filename: 'src/css/[name].css'
+      filename: 'src/css/[name].css',
     }),
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*.hbs`,  { nodir: true }),
